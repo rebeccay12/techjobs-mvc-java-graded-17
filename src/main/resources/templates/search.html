@@ -37,7 +37,24 @@
   <hr />
 
   <!-- TODO #4 - Loop over the search results to display all job fields. -->
-
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Employer</th>
+            <th>Location</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="job : ${jobs}">
+            <td th:text="${job.title}">Title</td>
+            <td th:text="${job.employer.name}">Employer</td>
+            <td th:text="${job.location}">Location</td>
+            <td th:text="${job.description}">Description</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 </body>
