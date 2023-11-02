@@ -28,11 +28,18 @@ public class ListController {
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
 
+        //modified code to try to add all jobs to the table, but it deleted the button, need to figure out the formula that
+//        tableChoices.put("all", "View All" );
+        //this find all function calls all the job listings, but I can't figure out how to call it only when the view all button is pressed.
+        // JobData.findAll()
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
+
     }
+
+
 
     @GetMapping(value = "")
     public String list(Model model) {
